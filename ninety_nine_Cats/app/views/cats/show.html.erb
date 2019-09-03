@@ -1,0 +1,33 @@
+<h1>This is your cat:</h1>
+
+<!-- <ul>
+  <li>Name: <%#= @cat.name %></li>
+  <li>Color: <%#= @cat.color %></li>
+  <li>Age: <%#= @cat.age %></li>
+  <li>Sex: <%#= @cat.sex %></li>
+  <li>Description: <%#= @cat.description %></li>
+
+
+</ul> -->
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"><%= @cat.name %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Color:</td>
+      <td>Age:</td>
+      <td>Sex:</td>
+    </tr>
+    <tr>
+      <td><%= @cat.color %></td>
+      <td><%= @cat.age %></td>
+      <td><%= @cat.sex %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Description: <%= @cat.description %></p>
