@@ -1,9 +1,11 @@
-<h1>Update your cat!</h1>
+<!-- <h1>Update your cat!</h1> -->
 
-<form action="<%= cat_url(@cat) %>" method="POST">
+<%= render 'form', cat: @cat, actional: cat_url(@cat), submitter: "update", heading: "Update your cat!" %>
+
+<!-- <form action="<%#= cat_url(@cat) %>" method="POST">
   <input type="hidden" name="_method" value="PATCH">
   <label for="name">Name:</label>
-    <input type="text" id="name" name="cat[name]" value="<%= @cat.name %>"><br>
+    <input type="text" id="name" name="cat[name]" value="<%#= @cat.name %>"><br>
   <br><label for="sex">Sex:</label><br>
     <% if @cat.sex == "M" %>
       <input type="radio" name="cat[sex]" id="sex" value="M" checked>Male<br>
@@ -15,14 +17,14 @@
   <br><label for="color">Color:</label>
     <select name="cat[color]" id="color" >
       <option value="BLANK">Please Select Color</option>
-      <option value="BLACK" <%= "selected" if @cat.color == "BLACK" %>>Black</option>
-      <option value="BROWN" <%= "selected" if @cat.color == "BROWN" %> >Brown</option>
-      <option value="ORANGE" <%= "selected" if @cat.color == "ORANGE" %>>Orange</option>
-      <option value="WHITE" <%= "selected" if @cat.color == "WHITE" %>>White</option>      
+      <option value="BLACK" <%#= "selected" if @cat.color == "BLACK" %>>Black</option>
+      <option value="BROWN" <%#= "selected" if @cat.color == "BROWN" %> >Brown</option>
+      <option value="ORANGE" <%#= "selected" if @cat.color == "ORANGE" %>>Orange</option>
+      <option value="WHITE" <%#= "selected" if @cat.color == "WHITE" %>>White</option>      
     </select><br>
   <br><label for="birth_date">Birthday:</label>
-    <input type="date" name="cat[birth_date]" id="birth_date" value="<%= @cat.birth_date %>" max="<%= Time.now %>"><br>
+    <input type="date" name="cat[birth_date]" id="birth_date" value="<%#= @cat.birth_date %>" max="<%#= Time.now %>"><br>
   <br><label for="description">Description:</label>
-    <textarea type="text" name="cat[description]" id="description"><%= @cat.description %></textarea> <br>
+    <textarea type="text" name="cat[description]" id="description"><%#= @cat.description %></textarea> <br>
   <br><input type="submit" value="Update Your Cat">
-</form>
+</form> -->

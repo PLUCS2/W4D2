@@ -15,6 +15,11 @@ class Cat < ApplicationRecord
     message: "%{value} is not a valid sex" }
   validates :description, presence: true 
 
+  has_many :rental_requests,
+  primary_key: :id,
+  foreign_key: :cat_id,
+  class_name: :CatRentalRequest
+
   def age
     b_day = self.birth_date
     time_ago_in_words(b_day)

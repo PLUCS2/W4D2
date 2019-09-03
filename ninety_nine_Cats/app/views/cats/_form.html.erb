@@ -1,0 +1,32 @@
+<h1><%= heading %></h1>
+
+
+
+<form action="<%= actional %>" method="POST">
+  <% if actional == cat_url(@cat) %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+  <label for="name">Name:</label>
+    <input type="text" id="name" name="cat[name]" value="<%= cat.name %>"><br>
+  <br><label for="sex">Sex:</label><br>
+    <% if cat.sex == "M" %>
+      <input type="radio" name="cat[sex]" id="sex" value="M" checked>Male<br>
+      <input type="radio" name="cat[sex]" id="sex" value="F">Female<br>
+    <% else %>
+      <input type="radio" name="cat[sex]" id="sex" value="M">Male<br>
+      <input type="radio" name="cat[sex]" id="sex" value="F" checked>Female<br>
+    <% end %>
+  <br><label for="color">Color:</label>
+    <select name="cat[color]" id="color" >
+      <option value="BLANK">Please Select Color</option>
+      <option value="BLACK" <%= "selected" if cat.color == "BLACK" %>>Black</option>
+      <option value="BROWN" <%= "selected" if cat.color == "BROWN" %> >Brown</option>
+      <option value="ORANGE" <%= "selected" if cat.color == "ORANGE" %>>Orange</option>
+      <option value="WHITE" <%= "selected" if cat.color == "WHITE" %>>White</option>      
+    </select><br>
+  <br><label for="birth_date">Birthday:</label>
+    <input type="date" name="cat[birth_date]" id="birth_date" value="<%= cat.birth_date %>" max="<%= Time.now %>"><br>
+  <br><label for="description">Description:</label>
+    <textarea type="text" name="cat[description]" id="description"><%= cat.description %></textarea> <br>
+  <br><input type="submit" value="<%= submitter %> your cat">
+</form>
